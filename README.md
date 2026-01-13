@@ -28,7 +28,7 @@ Windfall Advisor helps people make smart decisions about unexpected money—whet
 - **Emergency fund growth:** Interactive chart with adjustable monthly contributions
 - **Editable assumptions:** Users can update debt amounts and interest rates
 
-### 🔐 **Privacy-First**
+### 🔒 **Privacy-First**
 - No signup required
 - No data storage
 - Anonymous processing
@@ -124,6 +124,18 @@ Claude returns:
 
 ---
 
+## What I Learned About AI Product Development
+
+Building this taught me how AI changes the product development process:
+
+**The bottleneck shifts from execution to decision-making.** Claude excels at implementing defined features, but recognizing when to expand scope (e.g., should categories be dynamic vs. fixed? should users save scenarios?) requires human product judgment.
+
+**Iteration cycles are different.** The pattern became: build → use → identify limitations → articulate new requirements → rebuild. This is fundamentally different from traditional development where the entire spec is defined upfront.
+
+**Product sense matters more than ever.** The model doesn't tell you what would make the product more useful - it waits for you to ask. Understanding user needs and translating them into specific AI instructions is the critical skill.
+
+---
+
 ## Future Improvements
 
 **Short-term (v2):**
@@ -215,4 +227,4 @@ MIT License - Feel free to use this project as inspiration for your own work!
 
 Built by [Carolyn Dempsey](https://github.com/carolynisadeveloper)
 
-Questions or feedback? Open an issue or reach out!
+Questions or feedback? Open an issue or reach out to carolynisadeveloper@gmail.com
