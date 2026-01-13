@@ -27,6 +27,13 @@ const [amount, setAmount] = useState(500);
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
       
       <div className="min-h-screen bg-white">
+        {/* Disclaimer Banner */}
+        <div className="bg-slate-100 border-b border-slate-200 py-3 px-6">
+          <p className="text-center text-sm text-slate-600" style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
+            <span className="font-semibold">Personal Project:</span> This is an educational demonstration. Do not use for actual financial decisions. Consult a certified financial advisor.
+          </p>
+        </div>
+
         {/* Navigation bar */}
         <nav className="bg-slate-900 border-b border-slate-800">
           <div className="max-w-6xl mx-auto px-6 py-5">
