@@ -1,7 +1,27 @@
+
+
+'use client';
+
+import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Home() {
+const [amount, setAmount] = useState(500);
+  const amounts = [500, 1000, 10000];
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAmount(prev => {
+        const currentIndex = amounts.indexOf(prev);
+        const nextIndex = (currentIndex + 1) % amounts.length;
+        return amounts[nextIndex];
+      });
+    }, 2500);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700;800;900&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -26,8 +46,20 @@ export default function Home() {
           <div className="py-24 border-b border-slate-200">
             <div className="max-w-3xl">
               <h1 className="text-6xl font-bold text-slate-900 mb-8 leading-tight" style={{fontFamily: '"DM Sans", sans-serif', letterSpacing: '-0.02em'}}>
-                💰 What should I do with $1,000?
-              </h1>
+  💰 What should I do with the{' '}
+  <span className="inline relative overflow-hidden" style={{ minWidth: '280px', textAlign: 'center', display: 'inline' }}>
+    <span 
+      key={amount}
+      className="inline-block text-green-600"
+      style={{
+        animation: 'dropAndFade 2.5s ease-in-out'
+      }}
+    >
+      ${amount.toLocaleString()}
+    </span>
+  </span>
+  {' '}I just got?
+</h1>
               
               <p className="text-2xl text-slate-700 mb-4 leading-relaxed font-semibold" style={{fontFamily: '"Source Sans Pro", sans-serif'}}>
                 Whether it's a tax refund, year-end bonus, or unexpected gift, making the right decision with a financial windfall can meaningfully improve your financial position.
@@ -156,6 +188,26 @@ export default function Home() {
           </div>
         </footer>
       </div>
-    </>
+      <style jsx>{`
+          @keyframes dropAndFade {
+            0% {
+              transform: translateY(-20px);
+              opacity: 0;
+            }
+            10% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+            90% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(20px);
+              opacity: 0;
+            }
+          }
+        `}</style>
+      </>
   );
 }
